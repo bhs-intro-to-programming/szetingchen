@@ -191,7 +191,7 @@ const sigma = (start, end, funct) => {
 const pi = (start, end, funct) => {
   let product = 0
   for (let n = start; n <= end; n++) {
-    product *= funct(n)
+    product = product * funct(n)
   }
   return product
 }
