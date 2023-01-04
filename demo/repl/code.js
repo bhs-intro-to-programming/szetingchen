@@ -188,6 +188,14 @@ const sigma = (start, end, funct) => {
   return sum
 }
 
+const pi = (start, end, funct) {
+  let product = 0
+  for (let n = start; n <= end; n++) {
+    sum *= funct(n)
+  }
+  return product
+}
+
 const findCentroid = (points) => {
   const pts = points.concat(points[0])
   const area = (sigma(0, pts.length - 2, i => (pts[i].x * pts[i + 1].y) - (pts[i + 1].x * pts[i].y))) / 2
@@ -195,6 +203,3 @@ const findCentroid = (points) => {
   const y = (sigma(0, pts.length - 2, i => (pts[i].y + pts[i + 1].y) * ((pts[i].x * pts[i + 1].y) - (pts[i + 1].x * pts[i].y)))) / (6 * area)
   return JSON.stringify({x, y})
 }
-
-console.log(findCentroid([{ x: 114, y: 86 }, { x: 123, y: 128 }, { x: 147, y: 170}, { x: 188, y: 207 }, { x: 277, y: 236 }, { x: 310, y: 233 }, 
-{ x: 338, y: 215 }, { x: 358, y: 192 }, { x: 375, y: 163 }, { x: 388, y: 124}, { x: 393, y: 76 }, { x: 391, y: 64 }, { x: 247, y: 31 }]))
