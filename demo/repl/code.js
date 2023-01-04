@@ -188,7 +188,7 @@ const sigma = (start, end, funct) => {
   return sum
 }
 
-const pi = (start, end, funct) {
+const pi = (start, end, funct) => {
   let product = 0
   for (let n = start; n <= end; n++) {
     sum *= funct(n)
